@@ -88,10 +88,10 @@
 
         Mac-Function_Layer {
             bindings = <
-&kp LG(A)  &kp LG(X)           &kp LG(C)   &kp LG(V)            &kp LG(F)          &kp RG(W)             &kp LA(LG(LEFT_ARROW))  &kp LG(R)             &kp LA(LG(RIGHT_ARROW))  &kp DOLLAR
-&kp TAB    &kp LC(LEFT_ARROW)  &kp LS(F3)  &kp LC(RIGHT_ARROW)  &mkp MB2           &kp LEFT_PARENTHESIS  &kp LG(LEFT_BRACKET)    &kp LC(LG(NUMBER_1))  &kp LG(RIGHT_BRACKET)    &kp DOUBLE_QUOTES
-&trans     &trans              &trans      &trans               &mkp MB3   &trans  &kp LEFT_BRACKET      &kp LG(Z)               &kp LG(A)             &kp LS(LG(Z))            &kp SQT
-&trans     &trans              &trans      &trans               &trans     &trans  &kp ENTER             &kagikakko              &kp BACKSPACE         &kp BACKSLASH            &kp HASH
+&kp LG(A)  &kp LG(X)           &kp LG(C)   &kp LG(V)            &kp LG(ESC)                   &kp RG(W)      &kp LA(LG(LEFT_ARROW))  &kp LG(R)             &kp LA(LG(RIGHT_ARROW))  &kp DOLLAR
+&kp TAB    &kp LC(LEFT_ARROW)  &kp LS(F3)  &kp LC(RIGHT_ARROW)  &kp LS(LG(NUMBER_4))          &kp LG(LC(Q))  &kp LG(LEFT_BRACKET)    &kp LC(LG(NUMBER_1))  &kp LG(RIGHT_BRACKET)    &kp DOUBLE_QUOTES
+&trans     &trans              &trans      &trans               &mkp MB3              &trans  &kp LG(Q)      &kp LG(Z)               &kp LG(A)             &kp LS(LG(Z))            &kp SQT
+&trans     &trans              &trans      &trans               &trans                &trans  &trans         &kagikakko              &trans                &kp BACKSLASH            &kp HASH
             >;
 
             sensor-bindings = <&scroll_up_down>;
