@@ -88,10 +88,10 @@
 
         Mac-Function_Layer {
             bindings = <
-&kp LG(A)  &kp LG(X)     &kp LG(C)    &kp LG(V)  &kp LG(F)          &kp RG(W)             &kp LA(LG(LEFT_ARROW))  &kp LG(R)             &kp LA(LG(RIGHT_ARROW))  &kp DOLLAR
-&kp TAB    &kp LEFT_GUI  &kp LS(TAB)  &mkp MB1   &mkp MB2           &kp LEFT_PARENTHESIS  &kp LG(LEFT_BRACKET)    &kp LC(LG(NUMBER_1))  &kp LG(RIGHT_BRACKET)    &kp DOUBLE_QUOTES
-&trans     &trans        &trans       &trans     &mkp MB3   &trans  &kp LEFT_BRACKET      &kp LG(Z)               &kp LG(A)             &kp LS(LG(Z))            &kp SQT
-&trans     &trans        &trans       &trans     &trans     &trans  &kp ENTER             &kagikakko              &kp BACKSPACE         &kp BACKSLASH            &kp HASH
+&kp LG(A)  &kp LG(X)           &kp LG(C)   &kp LG(V)            &kp LG(F)          &kp RG(W)             &kp LA(LG(LEFT_ARROW))  &kp LG(R)             &kp LA(LG(RIGHT_ARROW))  &kp DOLLAR
+&kp TAB    &kp LC(LEFT_ARROW)  &kp LS(F3)  &kp LC(RIGHT_ARROW)  &mkp MB2           &kp LEFT_PARENTHESIS  &kp LG(LEFT_BRACKET)    &kp LC(LG(NUMBER_1))  &kp LG(RIGHT_BRACKET)    &kp DOUBLE_QUOTES
+&trans     &trans              &trans      &trans               &mkp MB3   &trans  &kp LEFT_BRACKET      &kp LG(Z)               &kp LG(A)             &kp LS(LG(Z))            &kp SQT
+&trans     &trans              &trans      &trans               &trans     &trans  &kp ENTER             &kagikakko              &kp BACKSPACE         &kp BACKSLASH            &kp HASH
             >;
 
             sensor-bindings = <&scroll_up_down>;
@@ -99,10 +99,10 @@
 
         Num_Layer {
             bindings = <
-&kp F1   &kp F2   &kp F3  &kp F4  &kp F5           &reiwa     &kp N7        &kp N8         &kp N9         &kp MINUS
-&kp F6   &kp F7   &kp F8  &kp F9  &kp F10          &kp PLUS   &kp NUMBER_4  &kp N5         &kp NUMBER_6   &kp EQUAL
-&kp F11  &kp F12  &trans  &trans  &trans   &trans  &kp N0     &kp NUMBER_1  &kp NUMBER_2   &kp NUMBER_3   &kp NON_US_BACKSLASH
-&trans   &trans   &trans  &trans  &trans   &trans  &kp ENTER  &kakko        &kp BACKSPACE  &kp AMPERSAND  &to 0
+&kp F1           &kp F2          &kp PERCENT      &kp F4  &kp F5           &reiwa     &kp N7        &kp N8         &kp N9         &kp MINUS
+&kp EXCLAMATION  &kp SLASH       &kp F8           &kp F9  &kp F10          &kp PLUS   &kp NUMBER_4  &kp N5         &kp NUMBER_6   &kp EQUAL
+&kp F11          &kp UP_ARROW    &trans           &trans  &trans   &trans  &kp N0     &kp NUMBER_1  &kp NUMBER_2   &kp NUMBER_3   &kp NON_US_BACKSLASH
+&kp LEFT_ARROW   &kp DOWN_ARROW  &kp RIGHT_ARROW  &trans  &trans   &trans  &kp ENTER  &kakko        &kp BACKSPACE  &kp AMPERSAND  &to 0
             >;
         };
 
