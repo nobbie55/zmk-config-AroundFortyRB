@@ -39,6 +39,20 @@
             bindings = <&kp LANGUAGE_1 &kp LEFT_BRACKET &kp RIGHT_BRACKET &kp RET &kp LEFT_ARROW>;
             label = "NEW_MACRO";
         };
+
+        kakko: kakko {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_PARENTHESIS &kp RIGHT_PARENTHESIS &kp RET &kp LEFT_ARROW>;
+            label = "KAKKO";
+        };
+
+        reiwa: reiwa {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LANGUAGE_1 &kp R &kp E &kp I &kp W &kp A>;
+            label = "REIWA";
+        };
     };
 
     behaviors {
@@ -66,29 +80,18 @@
         Mac-Default_Layer {
             bindings = <
 &kp Q             &kp W                &kp E      &kp R                      &kp T                                           &kp Y        &kp U        &kp I        &kp O       &kp P
-&kp A             &kp S                &kp D      &kp F                      &kp G                                           &kp H        &kp J        &kp K        &kp L       &kp MINUS
-&kp Z             &kp X                &kp C      &kp V                      &kp B                            &mkp MB4       &kp N        &kp M        &kp COMMA    &kp PERIOD  &mt RIGHT_SHIFT SLASH
-&mt LEFT_ALT TAB  &mt LEFT_ALT LC(F5)  &kp LG(V)  &mt LEFT_SHIFT LANGUAGE_2  &mt LG(LEFT_COMMAND) LANGUAGE_1  &kp BACKSPACE  &lt 1 ENTER  &kp AT_SIGN  &lt 2 SPACE  &mkp MB3    &to 3
+&kp A             &kp S                &kp D      &kp F                      &kp G                                           &kp H        &kp J        &lt 5 K      &kp L       &kp MINUS
+&kp Z             &kp X                &kp C      &kp V                      &kp B                            &mkp MB4       &kp N        &kp M        &lt 5 COMMA  &kp PERIOD  &mt RIGHT_SHIFT SLASH
+&mt LEFT_ALT TAB  &mt LEFT_ALT LC(F5)  &kp LG(V)  &mt LEFT_SHIFT LANGUAGE_2  &mt LG(LEFT_COMMAND) LANGUAGE_1  &kp BACKSPACE  &lt 1 ENTER  &kp AT_SIGN  &lt 2 SPACE  &mkp MB3    &to 2
             >;
         };
 
         Mac-Function_Layer {
             bindings = <
-&kp LG(A)  &kp LG(X)     &kp LG(C)    &kp LG(V)  &kp LG(F)          &kp LESS_THAN         &kp GREATER_THAN       &kp CARET        &kp PERCENT    &kp DOLLAR
-&kp TAB    &kp LEFT_GUI  &kp LS(TAB)  &mkp MB1   &mkp MB2           &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp AT_SIGN      &kp AMPERSAND  &kp DOUBLE_QUOTES
-&trans     &trans        &trans       &trans     &mkp MB3   &trans  &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp EXCLAMATION  &kp QUESTION   &kp SQT
-&trans     &trans        &trans       &trans     &trans     &trans  &kp ENTER             &kp COLON              &kp BACKSPACE    &kp BACKSLASH  &kp HASH
-            >;
-
-            sensor-bindings = <&scroll_up_down>;
-        };
-
-        Mac-Common_Layer {
-            bindings = <
-&kp ESCAPE      &trans        &trans       &kp LG(UP_ARROW)    &trans                       &kp LG(W)        &kp LG(LEFT_ARROW)  &mkp MB3        &kp LG(RIGHT_ARROW)  &kp HOME
-&kp TAB         &kp LEFT_GUI  &kp LS(TAB)  &kp LG(LEFT_ARROW)  &kp LG(RIGHT_ARROW)          &kp LG(TAB)      &mkp MB1            &kp UP_ARROW    &mkp MB2             &kp PAGE_UP
-&kp LEFT_SHIFT  &trans        &trans       &kp LG(DOWN_ARROW)  &trans               &trans  &kp LG(LS(TAB))  &kp LEFT_ARROW      &kp DOWN_ARROW  &kp RIGHT_ARROW      &kp PAGE_DOWN
-&kp LCTRL       &trans        &trans       &trans              &trans               &trans  &trans           &kp LG(T)           &trans          &trans               &kp END
+&kp LG(A)  &kp LG(X)     &kp LG(C)    &kp LG(V)  &kp LG(F)          &kp RG(W)             &kp LA(LG(LEFT_ARROW))  &kp LG(R)             &kp LA(LG(RIGHT_ARROW))  &kp DOLLAR
+&kp TAB    &kp LEFT_GUI  &kp LS(TAB)  &mkp MB1   &mkp MB2           &kp LEFT_PARENTHESIS  &kp LG(LEFT_BRACKET)    &kp LC(LG(NUMBER_1))  &kp LG(RIGHT_BRACKET)    &kp DOUBLE_QUOTES
+&trans     &trans        &trans       &trans     &mkp MB3   &trans  &kp LEFT_BRACKET      &kp LG(Z)               &kp LG(A)             &kp LS(LG(Z))            &kp SQT
+&trans     &trans        &trans       &trans     &trans     &trans  &kp ENTER             &kagikakko              &kp BACKSPACE         &kp BACKSLASH            &kp HASH
             >;
 
             sensor-bindings = <&scroll_up_down>;
@@ -96,10 +99,10 @@
 
         Num_Layer {
             bindings = <
-&kp F1   &kp F2   &kp F3  &kp F4  &kp F5           &kp PLUS      &kp MINUS   &kp NUMBER_7   &kp NUMBER_8   &kp NUMBER_9
-&kp F6   &kp F7   &kp F8  &kp F9  &kp F10          &kp EQUAL     &kp COLON   &kp N4         &kp N5         &kp N6
-&kp F11  &kp F12  &trans  &trans  &trans   &trans  &kp ASTERISK  &kp SLASH   &kp NUMBER_1   &kp NUMBER_2   &kp NUMBER_3
-&trans   &trans   &trans  &trans  &trans   &trans  &kp ENTER     &kp DOLLAR  &kp BACKSPACE  &kp AMPERSAND  &to 0
+&kp F1   &kp F2   &kp F3  &kp F4  &kp F5           &reiwa     &kp N7        &kp N8         &kp N9         &kp MINUS
+&kp F6   &kp F7   &kp F8  &kp F9  &kp F10          &kp PLUS   &kp NUMBER_4  &kp N5         &kp NUMBER_6   &kp EQUAL
+&kp F11  &kp F12  &trans  &trans  &trans   &trans  &kp N0     &kp NUMBER_1  &kp NUMBER_2   &kp NUMBER_3   &kp NON_US_BACKSLASH
+&trans   &trans   &trans  &trans  &trans   &trans  &kp ENTER  &kakko        &kp BACKSPACE  &kp AMPERSAND  &to 0
             >;
         };
 
