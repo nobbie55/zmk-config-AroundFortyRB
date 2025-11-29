@@ -93,19 +93,19 @@
 
         Mac-Default_Layer {
             bindings = <
-&kp Q             &kp W                &kp E      &kp R                      &kp T                                           &kp Y        &kp U        &kp I        &kp O       &kp P
-&kp A             &kp S                &kp D      &kp F                      &kp G                                           &kp H        &kp J        &lt 5 K      &kp L       &kp MINUS
-&kp Z             &kp X                &kp C      &kp V                      &lt 3 B                          &mkp MB4       &kp N        &kp M        &lt 6 COMMA  &kp PERIOD  &kp SLASH
-&mt LEFT_ALT TAB  &mt LEFT_CONTROL F5  &kp LG(V)  &mt LEFT_SHIFT LANGUAGE_2  &mt LG(LEFT_COMMAND) LANGUAGE_1  &kp BACKSPACE  &lt 1 ENTER  &kp AT_SIGN  &lt 2 SPACE  &mkp MB3    &to 2
+&kp Q             &kp W                &kp E      &kp R                      &kp T                                       &kp Y        &kp U        &kp I        &kp O       &kp P
+&kp A             &kp S                &kp D      &kp F                      &kp G                                       &kp H        &kp J        &lt 5 K      &kp L       &kp MINUS
+&kp Z             &kp X                &kp C      &kp V                      &lt 3 B                      &mkp MB4       &kp N        &kp M        &lt 6 COMMA  &kp PERIOD  &kp SLASH
+&mt LEFT_ALT TAB  &mt LEFT_CONTROL F5  &kp LG(V)  &mt LEFT_SHIFT LANGUAGE_2  &mt LEFT_COMMAND LANGUAGE_1  &kp BACKSPACE  &lt 1 ENTER  &kp AT_SIGN  &lt 2 SPACE  &mkp MB3    &to 2
             >;
         };
 
         Mac-Function_Layer {
             bindings = <
-&kp LG(A)  &kp LG(X)           &kp LG(C)   &kp LG(V)            &kp LG(ESC)                   &kp RG(W)      &kp LA(LG(LEFT_ARROW))  &kp LG(R)             &kp LA(LG(RIGHT_ARROW))  &trans
-&kp TAB    &kp LC(LEFT_ARROW)  &kp LS(F3)  &kp LC(RIGHT_ARROW)  &kp LS(LG(NUMBER_4))          &kp LG(LC(Q))  &kp LG(LEFT_BRACKET)    &kp LC(LG(NUMBER_1))  &kp LG(RIGHT_BRACKET)    &kp DOUBLE_QUOTES
-&trans     &trans              &trans      &trans               &mkp MB3              &trans  &kp LG(Q)      &kp LG(Z)               &kp LG(A)             &kp LS(LG(Z))            &kp SQT
-&trans     &trans              &trans      &trans               &pw2                  &pw1    &trans         &kagikakko              &trans                &kp BACKSLASH            &kp HASH
+&kp LG(A)  &kp LG(X)           &kp LG(C)      &kp LG(V)            &kp LG(ESC)                   &kp RG(W)      &kp LA(LG(LEFT_ARROW))  &kp LG(R)             &kp LA(LG(RIGHT_ARROW))  &trans
+&kp TAB    &kp LC(LEFT_ARROW)  &kp F3         &kp LC(RIGHT_ARROW)  &kp LS(LG(NUMBER_4))          &kp LG(LC(Q))  &kp LG(LEFT_BRACKET)    &kp LC(LG(NUMBER_1))  &kp LG(RIGHT_BRACKET)    &kp LEFT_BRACKET
+&trans     &trans              &trans         &trans               &trans                &trans  &kp LG(Q)      &kp LG(Z)               &kp LG(A)             &kp LS(LG(Z))            &kp RIGHT_BRACKET
+&trans     &trans              &kp LA(LG(V))  &trans               &pw2                  &pw1    &trans         &kagikakko              &trans                &kp BACKSLASH            &kp HASH
             >;
 
             sensor-bindings = <&scroll_up_down>;
