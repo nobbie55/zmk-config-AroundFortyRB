@@ -64,4 +64,9 @@
     };
 };
 
-
+&zip_temp_layer {
+    excluded-positions = <
+        16 // J
+        18 // l
+    >;
+};
