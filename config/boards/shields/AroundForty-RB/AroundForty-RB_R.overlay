@@ -1,5 +1,5 @@
 #include "AroundForty-RB.dtsi"
-
+#include <input/processors.dtsi>
 
 &default_transform {
     col-offset = <6>;
