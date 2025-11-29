@@ -15,17 +15,15 @@
         ;
 };
 
-/ {
-    custom_mouse_processor: custom_mouse_processor {
-        compatible = "zmk,input-processor-temp-layer";
-        #input-processor-cells = <2>;
-        excluded-positions = <16 18>;
-    };
+&zip_temp_layer {
+    excluded-positions = <16 18>;
+};
 
+/ {
     trackball_listener {
         compatible = "zmk,input-listener";
         device = <&trackball>;
-        input-processors = <&custom_mouse_processor 4 600>;
+        input-processors = <&zip_temp_layer 4 600>;
     };
 };
 
