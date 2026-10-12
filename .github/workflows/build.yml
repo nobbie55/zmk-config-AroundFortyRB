@@ -1,5 +1,49 @@
+name: Build and publish around40
+
 on: [push, pull_request, workflow_dispatch]
+
+permissions:
+  contents: read
 
 jobs:
   build:
     uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@v0.2.1
+
+  release:
+    needs: build
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v5
+        with:
+          name: firmware
+          path: firmware
+      - name: Package verified firmware
+        env:
+          COMMIT_SHA: ${{ github.sha }}
+        run: |
+          set -euo pipefail
+          test -s firmware/around40-left.uf2
+          test -s firmware/around40-right.uf2
+          test -s firmware/around40-settings-reset.uf2
+          cp docs/使い方.md firmware/README-ja.md
+          cp docs/keymap.png firmware/keymap.png
+          printf '%s\n' "$COMMIT_SHA" > firmware/SOURCE_COMMIT.txt
+          (cd firmware && sha256sum *.uf2 > SHA256SUMS.txt)
+          (cd firmware && zip -q ../around40-final.zip around40-left.uf2 around40-right.uf2 around40-settings-reset.uf2 README-ja.md keymap.png SOURCE_COMMIT.txt SHA256SUMS.txt)
+      - name: Publish the final version
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          COMMIT_SHA: ${{ github.sha }}
+        run: |
+          set -euo pipefail
+          tag="around40-final-${COMMIT_SHA:0:12}"
+          if gh release view "$tag" >/dev/null 2>&1; then
+            gh release upload "$tag" around40-final.zip --clobber
+          else
+            gh release create "$tag" around40-final.zip --target "$COMMIT_SHA" --title "around40 最終版" --notes-file docs/使い方.md --latest
+          fi
